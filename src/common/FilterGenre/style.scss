@@ -1,0 +1,46 @@
+.filter {
+  width: 15rem;
+  position: absolute;
+  margin-top: 3rem;
+  z-index: 1000;
+  right: 3rem;
+}
+
+.select {
+  position: relative;
+  min-width: 200px;
+}
+
+.select select {
+  -webkit-appearance: none;
+  padding: 1rem 2rem;
+  width: 100%;
+  border: 1px solid #e8eaed;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 1px 3px -2px #9098a9;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.6rem;
+  transition: all 150ms ease;
+
+  text-align: center;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1.4rem !important;
+  }
+}
+.select select:required:invalid {
+  color: #5a667f;
+}
+.select select option {
+  color: #223254;
+}
+.select select option[value=""][disabled] {
+  display: none;
+}
+.select select:focus {
+  outline: none;
+  border-color: #07f;
+  box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+}

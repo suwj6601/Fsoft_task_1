@@ -1,0 +1,83 @@
+.movie-list {
+  padding: 10rem 3rem;
+  background-color: black;
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+
+  &__container {
+    overflow: hidden;
+    width: calc(5 * 22rem + 6 * 3rem);
+    display: flex;
+
+    @media only screen and (max-width: 768px) {
+      width: calc(2 * 16rem + 3 * 3rem);
+    }
+
+    @media only screen and (min-width: 1024px) {
+      width: calc(6 * 22rem + 7 * 3rem);
+    }
+
+    @media only screen and (max-width: 1024px) and(min-width: 768px) {
+      width: calc(4 * 22rem + 5 * 3rem);
+    }
+
+    .movie-poster {
+      position: relative;
+      transition: 0.3s ease;
+    }
+
+    .arrow-left,
+    .arrow-right {
+      font-size: 30px;
+      color: white;
+
+      &:hover {
+        cursor: pointer;
+        color: red;
+      }
+    }
+
+    .arrow-left {
+      position: absolute;
+      top: 50%;
+      left: 4rem;
+      margin-right: 2rem;
+    }
+
+    .arrow-right {
+      position: absolute;
+      top: 50%;
+      right: 4rem;
+      margin-right: 2rem;
+    }
+  }
+}
+
+.movie-poster {
+  display: flex;
+
+  div {
+    margin-left: 3rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: calc(2 * 16rem + 3 * 3rem);
+  }
+}
+
+@keyframes movieListTranform {
+  from {
+    left: -50px;
+  }
+  to {
+    left: 50px;
+  }
+}
+
+.animationCard {
+  animation: movieListTranform 1s 1;
+}

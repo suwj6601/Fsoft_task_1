@@ -1,0 +1,44 @@
+.card {
+  width: 22rem;
+
+  @media only screen and (max-width: 768px) {
+    width: 16rem;
+  }
+
+  &::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .title {
+    font-weight: 900;
+    font-size: 2rem;
+    transition: 0.4s ease;
+    color: white;
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+img {
+  height: 33rem;
+  width: 22rem;
+  border-radius: 3rem;
+
+  @media only screen and (max-width: 768px) {
+    width: 16rem;
+    height: 28rem;
+  }
+}

@@ -1,0 +1,149 @@
+.movie-selected {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  transition: 1s ease;
+  padding: 7rem 0;
+
+  @media only screen and (max-width: 768px) {
+    padding: 5rem 0;
+    width: 100%;
+  }
+}
+
+.movie-selected__wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    height: 60rem;
+    max-width: 40rem;
+    border-radius: 2.5rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    img {
+      display: none;
+    }
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.poster {
+  flex: 0.3;
+}
+
+.movie-selected__desc {
+  flex: 0.65;
+
+  @media only screen and (max-width: 768px) {
+    flex: 0.8;
+  }
+}
+
+.more_desc {
+  width: 100%;
+
+  .overview {
+    color: white;
+    font-size: 2.2rem;
+    font-weight: 400;
+  }
+
+  .genre {
+    margin-top: 2rem;
+
+    display: flex;
+
+    .genre_item {
+      flex: 0.25;
+      text-align: center;
+      height: 40px;
+      color: white;
+      font-size: 2rem;
+      font-weight: 400;
+      border: 3px solid white;
+      border-radius: 10px;
+      max-width: 12rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:not(:first-child) {
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  .rating {
+    color: white;
+    font-size: 2.6rem;
+    margin-top: 2rem;
+  }
+
+  .votes {
+    color: white;
+    font-size: 2.6rem;
+    margin-top: 2rem;
+  }
+}
+
+.title {
+  width: 100%;
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: white;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 6rem;
+  }
+}
+
+.btns {
+  margin-top: 4rem;
+  display: flex;
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn {
+    border: none;
+    outline: none;
+    text-align: center;
+    padding: 1.4rem 2.6rem;
+    font-size: 1.8rem;
+    color: white;
+    background-color: red;
+    border-radius: 2rem;
+    width: 18rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .btn-watch:hover {
+    box-shadow: 0 0 7px 8px rgba(255, 0, 0, 0.302);
+  }
+
+  .btn-trailer {
+    background-color: transparent;
+    border: 2px solid white;
+    margin-left: 2rem;
+
+    &:hover {
+      background-color: white;
+      color: red;
+      // cursor: pointer;
+    }
+  }
+}

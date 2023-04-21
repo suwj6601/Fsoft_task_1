@@ -1,0 +1,17 @@
+.page__not-found {
+  height: 60vh;
+  color: rgb(206, 198, 198);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title__err {
+  font-size: 10rem;
+}
+
+.desc__err {
+  font-size: 5rem;
+}
