@@ -37,7 +37,7 @@ const Mainpage = () => {
       loadingElement.style.display = "none";
       mainPageActive.style.display = "block";
     }
-  }, [loading]);
+  }, [dispatch, loading]);
 
   return (
     <div className="">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import "./style.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { actSetFilterMovie } from "../../controller/action";
@@ -26,7 +26,7 @@ const FilterGenre = () => {
     });
   });
 
-  const onFilterGenre = () => {
+  const onFilterGenre = useCallback(() => {
     const selectedFilterGenre = document.getElementById("slct");
     const movieList = document.getElementsByClassName("movie-poster")[0];
 
@@ -46,11 +46,11 @@ const FilterGenre = () => {
         movieList.style.transform = `translateX(0)`;
       }
     });
-  };
+  });
 
   useEffect(() => {
     onFilterGenre();
-  }, [genre]);
+  }, [onFilterGenre]);
 
   return (
     <div className="filter">

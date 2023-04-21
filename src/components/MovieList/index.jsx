@@ -40,6 +40,9 @@ const MovieList = () => {
   const totalCard =
     filterMovie.length === 0 ? listMovie.length : filterMovie.length;
 
+  const totalCurrentCard =
+    listFilterMovie.length === 0 ? listMovie.length : listFilterMovie.length;
+
   const listCurrentMovie =
     listFilterMovie?.length === 0 ? listMovie : listFilterMovie;
 
@@ -48,8 +51,6 @@ const MovieList = () => {
   const slideListMovie = () => {
     const bodyElementDOM = document.getElementsByTagName("BODY")[0];
     const widthTransform = bodyElementDOM.offsetWidth < 766 ? 19 : 25;
-
-    console.log(widthTransform);
 
     let currentFontSize = parseInt(
       getStyles(document.body, "font-size")["font-size"]
@@ -71,8 +72,6 @@ const MovieList = () => {
     );
 
     const leftArrowFunction = () => {
-      console.log("count: ", countTranform);
-
       if (countTranform > 0) {
         movieList.style.transform = `translateX(calc(-${widthTransform}rem * ${
           countTranform - 2
@@ -104,9 +103,17 @@ const MovieList = () => {
         movieList.style.animation = "";
       }
     };
-    arrowLeft.addEventListener("click", leftArrowFunction);
 
+    arrowLeft.addEventListener("click", leftArrowFunction);
     arrowRight.addEventListener("click", rightArrowFunction);
+
+    if (totalCurrentCard < numberCard) {
+      arrowLeft.style.display = "none";
+      arrowRight.style.display = "none";
+    } else {
+      arrowLeft.style.display = "block";
+      arrowRight.style.display = "block";
+    }
   };
 
   useEffect(() => {
